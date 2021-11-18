@@ -4,15 +4,96 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Nikitenko Design Lab</title>
+    <script defer src="index.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <a href="/" class="logo"
-          ><img src="./assets/logo.png" alt="logo__image"
-        /></a>
+        <div class="header__wrapper">
+          <div class="header__left-side">
+            <a href="/" class="logo">
+              <img
+                src="./assets/logo.png"
+                class="logo__image"
+                alt="Логотип NDL"
+              />
+            </a>
+            <nav class="navbar">
+              <ul class="navbar__menu">
+                <li class="navbar__item"><a class="navbar__link">О нас</a></li>
+                <li class="navbar__item"><a class="navbar__link">Услуги</a></li>
+                <li class="navbar__item">
+                  <a class="navbar__link">Ключевые особенности</a>
+                </li>
+                <li class="navbar__item"><a class="navbar__link">Отзывы</a></li>
+                <li class="navbar__item">
+                  <a class="navbar__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__right-side">
+            <a class="phone header__phone" href="tel:+79159732069"
+              ><svg
+                height="16px"
+                version="1.1"
+                viewBox="0 0 18 18"
+                width="16px"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <title />
+                <desc />
+                <defs />
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                >
+                  <g
+                    fill="#a2a2a2"
+                    id="icon-phone"
+                    transform="translate(-85.000000, -126.000000)"
+                  >
+                    <g id="phone" transform="translate(85.000000, 126.000000)">
+                      <path
+                        d="M3.6,7.8 C5,10.6 7.4,12.9 10.2,14.4 L12.4,12.2 C12.7,11.9 13.1,11.8 13.4,12 C14.5,12.4 15.7,12.6 17,12.6 C17.6,12.6 18,13 18,13.6 L18,17 C18,17.6 17.6,18 17,18 C7.6,18 0,10.4 0,1 C0,0.4 0.4,0 1,0 L4.5,0 C5.1,0 5.5,0.4 5.5,1 C5.5,2.2 5.7,3.4 6.1,4.6 C6.2,4.9 6.1,5.3 5.9,5.6 L3.6,7.8 L3.6,7.8 Z"
+                        id="Shape"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              +7 (915) 973 20-69
+            </a>
+            <button class="button button_secondary">ОСТАВИТЬ ЗАЯВКУ</button>
+          </div>
+        </div>
       </div>
     </header>
+    <main class="main">
+      <div class="container">
+        <div class="main__wrapper">
+          <h1 class="main__title">
+            Создаем стильные сайты и успешно их продвигаем
+          </h1>
+          <p class="main__description">
+            Студия №1 Ярославле по рейтингу Google
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

@@ -1,0 +1,185 @@
+:root {
+  --primary-color: #5449e3;
+  --primary-darkened-color: #2f22dc;
+  --gray: #b2b2b2;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1366px;
+  height: 100%;
+
+  margin: 0 auto;
+}
+
+.header {
+  height: 100px;
+}
+
+.header_fixed {
+  position: fixed;
+
+  box-shadow: 0 4px 5px black;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+}
+
+.header__left-side {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.logo {
+  display: block;
+
+  width: 200px;
+
+  margin-right: 40px;
+}
+
+.logo__image {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar__menu {
+  display: flex;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navbar__item {
+  margin-right: 10px;
+  padding: 10px 10px;
+
+  cursor: pointer;
+}
+
+.navbar__item:hover {
+  color: var(--primary-color);
+}
+
+.navbar__link {
+  font-size: 18px;
+}
+
+.navbar__item:last-child {
+  margin-right: 0;
+}
+
+.phone {
+  vertical-align: middle;
+  display: inline-block;
+
+  color: var(--gray);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.phone svg {
+  vertical-align: middle;
+
+  margin-right: 5px;
+}
+
+.phone:hover {
+  color: #838383;
+}
+
+.phone:hover #icon-phone {
+  fill: #838383;
+}
+
+.header__phone {
+  margin-right: 10px;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.button_primary {
+  background-color: var(--primary-color);
+  border: none;
+
+  color: white;
+}
+
+.button_secondary {
+  background-color: white;
+  border: 2px solid var(--primary-color);
+
+  color: var(--primary-color);
+}
+
+.button.button_primary:hover {
+  background-color: var(--primary-darkened-color);
+
+  transition: 0.2s ease-out;
+}
+
+.button.button_secondary:hover {
+  color: white;
+  background-color: var(--primary-color);
+
+  transition: 0.2s ease-out;
+}
+
+.main {
+  padding-top: 60px;
+}
+
+.main__wrapper {
+  padding-left: 72px;
+  width: 1000px;
+}
+
+.main__title {
+  font-size: 76px;
+  position: relative;
+}
+
+.main__title::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -72px;
+  top: 0;
+  bottom: 0;
+  width: 42px;
+  background-color: var(--primary-color);
+}
+
+.main__description {
+  font-size: 24px;
+}
