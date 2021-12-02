@@ -16,6 +16,89 @@
     <script defer src="index.js"></script>
   </head>
   <body>
+    <div class="modal">
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <form>
+          <div class="form__row">
+            <label class="feedback__label"
+              >Ваше имя
+              <input
+                type="text"
+                name="name"
+                required="required"
+                class="input input__feedback"
+            /></label>
+          </div>
+          <div class="form__row">
+            <label class="feedback__label"
+              >Электронная почта
+              <input
+                type="email"
+                name="email"
+                required="required"
+                class="input input__feedback"
+            /></label>
+          </div>
+          <div class="form__row">
+            <label class="feedback__label"
+              >Телефон
+              <input
+                type="phone"
+                name="phone"
+                required="required"
+                class="input input__feedback"
+            /></label>
+          </div>
+          <div class="form__row">
+            <span>Какая услуга вас интересует?</span>
+            <div class="form__checkboxes">
+              <label
+                ><input type="checkbox" name="landing_page" />Лендинговая
+                страница</label
+              >
+              <label
+                ><input type="checkbox" name="corporate_website" />Корпоративный
+                сайт</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="online_store"
+                />Интернет-магазин</label
+              >
+              <label
+                ><input type="checkbox" name="news_portal" />Новостной
+                портал</label
+              >
+            </div>
+            <div class="form__row">
+              <label class="feedback__label"
+                >Комментарий
+                <textarea
+                  name="message"
+                  cols="30"
+                  rows="10"
+                  class="input input__feedback"
+                ></textarea>
+              </label>
+            </div>
+            <div class="form__row">
+              <label
+                ><input
+                  type="checkbox"
+                  name="agreement"
+                  required="required"
+                />Даю согласие на обработку данных</label
+              >
+            </div>
+            <div class="form__row">
+              <button class="button button_primary">ОТПРАВИТЬ</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <header class="header">
       <div class="container">
         <div class="header__wrapper">
@@ -78,7 +161,9 @@
               </svg>
               +7 (915) 973 20-69
             </a>
-            <button class="button button_secondary">ОСТАВИТЬ ЗАЯВКУ</button>
+            <button class="button button_secondary js-open-modal">
+              ОСТАВИТЬ ЗАЯВКУ
+            </button>
           </div>
         </div>
       </div>
@@ -90,10 +175,71 @@
             Создаем стильные сайты и успешно их продвигаем
           </h1>
           <p class="main__description">
-            Студия №1 Ярославле по рейтингу Google
+            Nikitenko Design Lab - веб-студия №1 в Ярославле по рейтингу Google
           </p>
         </div>
       </div>
     </main>
+    <section style="height: 700px; border-bottom: 1px solid black"></section>
+    <section class="advantages">
+      <div class="container">
+        <h2 class="title">О нас</h2>
+        <div class="advantages__about-us">
+          Nikitenko Design Lab — это не просто веб-студия, занимающаяся
+          разработкой сайтов, их поддержкой и продвижением. Мы предлагаем полный
+          перечень услуг, связанных с созданием и раскруткой сайтов под ключ и,
+          конечно, мы сопровождаем созданные нами проекты. Наши знания и опыт
+          позволяют нам гарантировать, что вверенный нашим специалистам уже
+          существующий сайт никогда не озадачит Вас своими выходами из строя и
+          начнет, наконец, приносить реальную прибыль. Если же нам будет
+          заказана разработка сайта с нуля, то готовый результат еще и приятно
+          удивит Вас своим оригинальным необычным решением и качественной
+          реализацией.
+        </div>
+        <div class="advantages__wrapper">
+          <div class="advantage">
+            <div class="advantage__icon">
+              <img src="./assets/bulb.svg" alt="" />
+            </div>
+            <span class="advantage__title">Концепция и разработка</span>
+            <p class="advantage__text">
+              Разработаем уникальную концепцию, которая повлияет на Ваш бизнес
+              максимально положительно
+            </p>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">
+              <img src="./assets/graph.svg" alt="" />
+            </div>
+            <span class="advantage__title">Анализ конкурентов</span>
+            <p class="advantage__text">
+              Предложим решение, которое превзойдёт ваших конкурентов и задаст
+              стандарт качества в вашей отрасли
+            </p>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">
+              <img src="./assets/key.svg" alt="" />
+            </div>
+            <span class="advantage__title">Индивидуальный подход</span>
+            <p class="advantage__text">
+              Учтём все желания и требования клиента, чтобы придти к идеальному
+              результату
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="container">
+        <h2 class="title">Отзывы</h2>
+        <div class="reviews__carousel js-carousel">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
