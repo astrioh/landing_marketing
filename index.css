@@ -122,15 +122,16 @@ body {
   width: 200px;
   height: 50px;
   border-radius: 10px;
+
+  text-transform: uppercase;
   font-weight: bold;
-  border: 0;
 
   cursor: pointer;
 }
 
 .button_primary {
   background-color: var(--primary-color);
-  border: none;
+  border: 0;
 
   color: white;
 }
@@ -156,7 +157,8 @@ body {
 }
 
 .main {
-  padding-top: 60px;
+  position: relative;
+  padding: 60px 0;
 }
 
 .main__wrapper {
@@ -345,4 +347,60 @@ textarea.input__feedback {
   to {
     opacity: 1;
   }
+}
+
+.main__request {
+  margin-top: 30px;
+}
+
+.services {
+  padding: 60px 0;
+}
+
+.services__title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.services__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  grid-gap: 20px 100px;
+
+  margin-top: 60px;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 400px;
+  height: 100%;
+
+  padding: 50px 20px 20px 20px;
+
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+}
+
+.service__image {
+  margin: 0 auto;
+
+  background-color: var(--gray);
+
+  width: 70px;
+  height: 70px;
+}
+
+.service__title {
+  margin-top: 30px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.service__button {
+  margin-top: 20px;
 }
