@@ -18,7 +18,7 @@
   <body>
     <div class="modal">
       <div class="modal__content">
-        <span class="modal__close">&times;</span>
+        <span class="modal__close js-close-modal">&times;</span>
         <form>
           <div class="form__row">
             <label class="feedback__label"
@@ -72,29 +72,28 @@
                 портал</label
               >
             </div>
-            <div class="form__row">
-              <label class="feedback__label"
-                >Комментарий
-                <textarea
-                  name="message"
-                  cols="30"
-                  rows="10"
-                  class="input input__feedback"
-                ></textarea>
-              </label>
-            </div>
-            <div class="form__row">
-              <label
-                ><input
-                  type="checkbox"
-                  name="agreement"
-                  required="required"
-                />Даю согласие на обработку данных</label
-              >
-            </div>
-            <div class="form__row">
-              <button class="button button_primary">ОТПРАВИТЬ</button>
-            </div>
+          </div>
+          <div class="form__row">
+            <label class="feedback__label"
+              >Комментарий
+              <textarea
+                name="message"
+                cols="30"
+                rows="10"
+                class="input input__feedback"
+              ></textarea>
+            </label>
+          </div>
+          <div class="form__row form__agreement-checkbox">
+            <label
+              ><input type="checkbox" name="agreement" required="required" />Даю
+              согласие на обработку данных</label
+            >
+          </div>
+          <div class="form__row">
+            <button type="button" class="button button_primary js-send-request">
+              ОТПРАВИТЬ
+            </button>
           </div>
         </form>
       </div>
@@ -112,14 +111,17 @@
             </a>
             <nav class="navbar">
               <ul class="navbar__menu">
-                <li class="navbar__item"><a class="navbar__link">О нас</a></li>
-                <li class="navbar__item"><a class="navbar__link">Услуги</a></li>
                 <li class="navbar__item">
-                  <a class="navbar__link">Ключевые особенности</a>
+                  <a class="navbar__link" href="#services">Услуги</a>
                 </li>
-                <li class="navbar__item"><a class="navbar__link">Отзывы</a></li>
                 <li class="navbar__item">
-                  <a class="navbar__link">Контакты</a>
+                  <a class="navbar__link" href="#about">О нас</a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__link" href="#reviews">Отзывы</a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__link" href="#contacts">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -204,12 +206,18 @@
       <div class="container">
         <div class="main__wrapper">
           <h1 class="main__title">
-            Создаем стильные сайты и успешно их продвигаем
+            Создаем стильные сайты и успешно их продвигаем.
           </h1>
           <p class="main__description">
-            Nikitenko Design Lab - веб-студия №1 в Ярославле по рейтингу Google
+            Nebula Design Lab - веб-студия №1 в Ярославле по рейтингу
+            <a
+              class="link main__link"
+              target="_blank"
+              href="https://tagline.ru/digital-production-rating/"
+              >Tagline</a
+            >.
           </p>
-          <button class="button button_primary main__request">
+          <button class="button button_primary main__request js-open-modal">
             Оставить заявку
           </button>
         </div>
@@ -310,20 +318,19 @@
         </div>
       </div>
     </section>
-    <section class="advantages">
+    <section class="advantages" id="about">
       <div class="container">
         <h2 class="title">О нас</h2>
         <div class="advantages__about-us">
-          Nikitenko Design Lab — это не просто веб-студия, занимающаяся
-          разработкой сайтов, их поддержкой и продвижением. Мы предлагаем полный
-          перечень услуг, связанных с созданием и раскруткой сайтов под ключ и,
-          конечно, мы сопровождаем созданные нами проекты. Наши знания и опыт
-          позволяют нам гарантировать, что вверенный нашим специалистам уже
-          существующий сайт никогда не озадачит Вас своими выходами из строя и
-          начнет, наконец, приносить реальную прибыль. Если же нам будет
-          заказана разработка сайта с нуля, то готовый результат еще и приятно
-          удивит Вас своим оригинальным необычным решением и качественной
-          реализацией.
+          Nebula Design Lab — это не просто веб-студия, занимающаяся разработкой
+          сайтов, их поддержкой и продвижением. Мы предлагаем полный перечень
+          услуг, связанных с созданием и раскруткой сайтов под ключ и, конечно,
+          мы сопровождаем созданные нами проекты. Наши знания и опыт позволяют
+          нам гарантировать, что вверенный нашим специалистам уже существующий
+          сайт никогда не озадачит Вас своими выходами из строя и начнет,
+          наконец, приносить реальную прибыль. Если же нам будет заказана
+          разработка сайта с нуля, то готовый результат еще и приятно удивит Вас
+          своим оригинальным необычным решением и качественной реализацией.
         </div>
         <div class="advantages__wrapper">
           <div class="advantage">
@@ -359,16 +366,203 @@
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <div class="container">
-        <h2 class="title">Отзывы</h2>
-        <div class="reviews__carousel js-carousel">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <h2 class="title reviews__title">Отзывы</h2>
+        <div class="reviews__wrapper">
+          <div class="review">
+            <div class="review__info">
+              <img
+                class="review__avatar"
+                alt="Picture of reviewer"
+                src="./assets/ava1.jfif"
+              />
+              <span class="review__name">Крис Робертсон</span>
+              <span class="review__company">CheapKeep, интернет-магазин</span>
+            </div>
+            <div class="review__text">
+              Отличная работа, друзья!<br />
+              Сайт сделали красиво и качественно, результатом мы очень довольны.
+              Детально обсуждали все моменты с менеджером разработки, поэтому
+              сайт сразу сделали таким как хотелось. Огромное спасибо команде
+              NDL за проделанную работу.
+            </div>
+          </div>
+          <div class="review">
+            <div class="review__info">
+              <img
+                class="review__avatar"
+                alt="Picture of reviewer"
+                src="./assets/ava2.jfif"
+              />
+              <span class="review__name">Антон Шестов</span>
+              <span class="review__company">Sellsurge, корпоративный сайт</span>
+            </div>
+            <div class="review__text">
+              Повстречал этот сайт в новостях крипто тематики, прочитав краткое
+              его описание, решил поинтересоваться тарифами. Ответили
+              оперативно, доходчиво всё рассказали и посоветовали сервера,
+              которые я могу выбрать, учитывая бюджет и личные пожелания. Данные
+              пришли спустя 5 минут после оплаты, что очень быстро как по мне.
+            </div>
+          </div>
+          <div class="review">
+            <div class="review__info">
+              <img
+                class="review__avatar"
+                alt="Picture of reviewer"
+                src="./assets/ava3.jfif"
+              />
+              <span class="review__name">Александр Климов</span>
+              <span class="review__company">cybuy.com, интернет-магазин</span>
+            </div>
+            <div class="review__text">
+              Благодарю NDL за выполненную работу по верстке сайта нашего
+              магазина и разработке дополнительных модулей. Все работы
+              выполнялись в срок и в соответствии с заданием. Возникающие в
+              процессе вопросы решались сразу и в короткие сроки. Создалось
+              очень положительное впечатление от сотрудничества. В общем
+              рекомендуем!
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <section class="contacts" id="contacts">
+      <h2 class="title">Контакты</h2>
+      <div class="contacts__info">
+        <div class="contacts__address">
+          Россия, г. Ярославль, Московский пр-т, д. 88
+        </div>
+        <div class="contacts__map">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1cda28b7909e0f1d9e1638aa369fe056fdb5a2acb808950f9791fc3184e3c33f&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"
+          ></script>
+        </div>
+      </div>
+    </section>
+    <section class="request">
+      <div class="container">
+        <h2 class="title title_white">Оставить заявку</h2>
+        <div class="request__wrapper">
+          <form class="request__form">
+            <div class="form__row">
+              <label class="feedback__label"
+                >Ваше имя
+                <input
+                  type="text"
+                  name="name"
+                  required="required"
+                  class="input input__feedback"
+              /></label>
+            </div>
+            <div class="form__row">
+              <label class="feedback__label"
+                >Электронная почта
+                <input
+                  type="email"
+                  name="email"
+                  required="required"
+                  class="input input__feedback"
+              /></label>
+            </div>
+            <div class="form__row">
+              <label class="feedback__label"
+                >Телефон
+                <input
+                  type="phone"
+                  name="phone"
+                  required="required"
+                  class="input input__feedback"
+              /></label>
+            </div>
+            <div class="form__row">
+              <span>Какая услуга вас интересует?</span>
+              <div class="form__checkboxes">
+                <label
+                  ><input type="checkbox" name="landing_page" />Лендинговая
+                  страница</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="corporate_website"
+                  />Корпоративный сайт</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="online_store"
+                  />Интернет-магазин</label
+                >
+                <label
+                  ><input type="checkbox" name="news_portal" />Новостной
+                  портал</label
+                >
+              </div>
+            </div>
+            <div class="form__row">
+              <label class="feedback__label"
+                >Комментарий
+                <textarea
+                  name="message"
+                  cols="30"
+                  rows="10"
+                  class="input form__textarea"
+                ></textarea>
+              </label>
+            </div>
+            <div class="form__row form__agreement-checkbox">
+              <label
+                ><input
+                  type="checkbox"
+                  name="agreement"
+                  required="required"
+                />Даю согласие на обработку данных</label
+              >
+            </div>
+            <button
+              type="button"
+              class="button button_white form__button js-send-request"
+            >
+              ОТПРАВИТЬ
+            </button>
+          </form>
+          <div class="request__image">
+            <img
+              src="./assets/form_bg.png"
+              alt="2 человека предлагают отправить заявку"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <a href="/" class="logo footer__logo">
+            <img
+              src="./assets/logo.png"
+              class="logo__image"
+              alt="Логотип NDL"
+            />
+          </a>
+          <div class="footer__address">
+            Россия, г. Ярославль, Московский пр-т, д. 88
+          </div>
+          <div class="footer__contacts">
+            <a class="phone footer__phone" href="tel:+79159732069">
+              +7 (915) 973 20-69
+            </a>
+            <a href="mailto:libut0853@gmail.com" class="footer__email"
+              >libut0853@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

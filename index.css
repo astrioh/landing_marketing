@@ -81,12 +81,14 @@ body {
   cursor: pointer;
 }
 
-.navbar__item:hover {
+.navbar__item:hover .navbar__link {
   color: var(--primary-color);
 }
 
 .navbar__link {
   font-size: 18px;
+  text-decoration: none;
+  color: #000;
 }
 
 .navbar__item:last-child {
@@ -145,6 +147,13 @@ body {
   color: var(--primary-color);
 }
 
+.button_white {
+  color: var(--primary-color);
+
+  background-color: #fff;
+  border: none;
+}
+
 .button.button_primary:hover {
   background-color: var(--primary-darkened-color);
 
@@ -158,9 +167,19 @@ body {
   transition: 0.2s ease-out;
 }
 
+.button_white:hover {
+  color: var(--primary-darkened-color);
+  font-weight: bold;
+}
+
+.link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 .main {
   position: relative;
-  padding: 60px 0;
+  padding: 60px 0 20px;
 }
 
 .main__wrapper {
@@ -188,11 +207,19 @@ body {
   font-size: 24px;
 }
 
+.main__link {
+  font-size: 24px;
+}
+
 .title {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+}
+
+.title_white {
+  color: #fff;
 }
 
 .advantages {
@@ -216,7 +243,6 @@ body {
   align-items: center;
 
   width: 350px;
-  height: 400px;
 }
 
 .advantage__icon {
@@ -258,12 +284,159 @@ body {
   text-align: center;
 }
 
+.reviews {
+  padding: 120px 0 0 0;
+}
+
+.reviews__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 50px;
+}
+
+.review {
+  width: 400px;
+  height: 350px;
+
+  box-shadow: 2px 2px 10px var(--gray);
+  border-radius: 5px;
+
+  padding: 20px;
+}
+
+.review__info {
+  display: grid;
+  grid-template-areas:
+    'ava name'
+    'ava company';
+  grid-template-columns: 75px 1fr;
+  grid-gap: 0 20px;
+}
+
+.review__avatar {
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  grid-area: ava;
+}
+
+.review__name {
+  grid-area: name;
+  align-self: start;
+
+  color: #777;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.review__company {
+  grid-area: company;
+  align-self: end;
+
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.review__text {
+  margin-top: 25px;
+}
+
+.contacts {
+  padding-top: 120px;
+}
+
+.contacts__info {
+  position: relative;
+
+  margin-top: 50px;
+}
+
+.contacts__address {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 300px;
+  height: 200px;
+
+  background-color: var(--primary-color);
+  padding: 80px 40px;
+
+  color: #fff;
+
+  z-index: 50;
+}
+
+.contacts__map {
+  height: 400px;
+  background-color: var(--gray);
+  filter: grayscale(100%);
+}
+
+.request {
+  padding: 30px 0;
+
+  background-color: var(--primary-color);
+}
+
+.request__wrapper {
+  display: flex;
+
+  position: relative;
+}
+
+.request__form {
+  width: 600px;
+  color: rgb(255, 255, 255);
+}
+
+.request__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  border-radius: 50%;
+  padding: 50px 50px 0 50px;
+  background-color: #fff;
+}
+
+.request__image img {
+  width: 550px;
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: 300px 250px 300px;
+  grid-gap: 50px;
+  align-items: center;
+}
+
+.footer__phone {
+  color: #000;
+}
+
+.footer__phone:hover {
+  font-weight: bold;
+  color: #000;
+}
+
 /*MODAL WINDOW*/
 
 .modal {
   display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 150;
   left: 0;
   top: 0;
   width: 100%;
@@ -279,10 +452,13 @@ body {
 .modal__content {
   background-color: #fefefe;
   padding: 20px;
-  margin: 0 auto;
   border: 1px solid #888;
   width: 550px;
   border-radius: 10px;
+}
+
+.modal form {
+  margin-top: 40px;
 }
 
 .modal__close {
@@ -303,10 +479,6 @@ form {
   margin-top: 0em;
 }
 
-textarea.input__feedback {
-  height: 100px;
-}
-
 .input {
   display: block;
   background: #ffffff;
@@ -319,16 +491,38 @@ textarea.input__feedback {
   border: 1px solid #d7d7d7;
 }
 
-.input__feedback {
-  margin: 0 0 20px 0;
+.form__row {
+  margin-bottom: 20px;
 }
 
 .form__checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+  margin-top: 10px;
+}
+
+.form__checkboxes input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+.form__textarea {
+  height: 100px;
+
+  resize: vertical;
+}
+
+.form__agreement-checkbox {
+  margin-top: 30px;
+}
+
+.form__agreement-checkbox input[type='checkbox'] {
+  margin-right: 5px;
 }
 
 .feedback__label {
   margin-bottom: 5px;
-  color: #000000;
   letter-spacing: 0px;
 }
 
@@ -352,7 +546,7 @@ textarea.input__feedback {
 }
 
 .main__request {
-  margin-top: 30px;
+  margin-top: 70px;
 }
 
 .services {
