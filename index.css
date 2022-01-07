@@ -449,6 +449,10 @@ body {
   -webkit-animation: fadeIn 0.3s;
 }
 
+.modal textarea {
+  height: 100px;
+}
+
 .modal__content {
   background-color: #fefefe;
   padding: 20px;
